@@ -5,6 +5,7 @@ import './App.css';
 //import Hello from './01/Hello'; // 헬로 불러오고 아래에 갖다 붙이기. 
 import MyClock from './02/MyClock';
 import Box from './03/Box';
+import './03/BoxRows.css'
 
 
 function App() {
