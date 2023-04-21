@@ -5,8 +5,7 @@ const MyClock = () => { //클래스 컴포넌트에서 이미 쓰고있어서 �
     return (
         <main className="container">
              <article data-theme="dark">
-                <MyClockImage/>
-                <MyClockImage/>
+                <MyClockImage/>               
                 <MyClockTime/>               
              </article>
         </main>
@@ -14,4 +13,4 @@ const MyClock = () => { //클래스 컴포넌트에서 이미 쓰고있어서 �
     );
 }
 
-export default MyClock;
+export default MyClock;//이래야 App.js에서 import가 되징~
