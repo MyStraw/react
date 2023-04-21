@@ -1,5 +1,7 @@
 import logo from '../logo.svg';
 import './Hello.css';
+import MyClockImage from '../02/MyClockImage';
+import MyClockTime from '../02/MyClockTime';
 
 //return x;  리턴 뒤에 반드시 x 자리에 태그가 온다.
 //이 x 를 jsx라고 한다. 중괄호를 쓸수있다. 중괄호엔 자바스크립트 표현식 쓸수있다. 변수명.
@@ -9,12 +11,16 @@ const Hello = () => {// 사용자 정의태그엔 반드시 리턴이 있어야.
     let name = '정승길';
     let git = 'https://github.com/MyStraw'; //리턴 윗부분. 펑션의 본문부분. 변수2개->리턴 안에 쓰고싶다.
     // 리턴 안에서 변수는 {}으로 부르면 된당. name 부분 확인해봐.
+   
+   
     return ( // 형제 div 못하고 1개만 만들수 있다 했잖아? 근데 프래그먼트 태그<> 빈태그로 감싸면 가능하다.
         <main className='container'>
             <article data-theme="dark">
                 <div>
                     <img src={logo} className='App-logo' alt='logo' />
                 </div>
+                <MyClockImage/>                
+                <MyClockTime/>
                 < footer >
                     <hgoup>
                         <h1>{name}</h1 >

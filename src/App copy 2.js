@@ -3,14 +3,11 @@
 
 import './App.css';
 import Hello from './01/Hello'; // 헬로 불러오고 아래에 갖다 붙이기. 
-//import MyClock from './02/MyClock';
 
 
 function App() {
   return (
-   <Hello /> //리액트는 반드시 사용자 정의태그 갖다 붙일때 시작과 끝이 있어야한다.    
-   //<MyClock/>
-
+    <Hello /> //리액트는 반드시 사용자 정의태그 갖다 붙일때 시작과 끝이 있어야한다.    
   );
 }
 
