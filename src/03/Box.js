@@ -1,5 +1,6 @@
 import BoxRows from "./BoxRows";
 
+
 //fetch 를 여기로 영화정보를 줬다. let~한거. 프롭스로 boxrows로 정보를 보내줘.
 //첨부터 boxrows로 해도 되겠지만 연습. 프로퍼티
 //내가 만든 태그에 내가 속성을 만든것. 사용자 정의태그 하고있잖앙~ <a href~> 이거처럼
