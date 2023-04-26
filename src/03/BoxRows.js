@@ -22,7 +22,7 @@ const BoxRows = ({ mv }) => { //case2) 오브젝트로 받아서 해버리기. �
 
         let icon;
         let intent = parseInt(row.rankInten) //이게 숫잔지 확신이 안드니.
-        if (parseInt(row.rankInten) == 0) icon = '⏺'
+        if (parseInt(row.rankInten) === 0) icon = '⏺'
         else if (intent < 0) icon = '🔽'
         else icon = '🔼'
         //여긴 자바스크립트다. 자바스크립트 짜듯이 명령어 쓰면 되지
@@ -34,7 +34,7 @@ const BoxRows = ({ mv }) => { //case2) 오브젝트로 받아서 해버리기. �
                 <td>{row.rank}</td>
                 <td>{row.movieNm}</td>
                 <td className="won">{parseInt(row.salesAmt).toLocaleString()}원</td>
-                <td>{icon}{intent == 0 ? '' : Math.abs(row.rankInten)}</td> {/*삼항 연산자로 변동0은 표시 안되게.*/}
+                <td>{icon}{intent === 0 ? '' : Math.abs(row.rankInten)}</td> {/*삼항 연산자로 변동0은 표시 안되게.*/}
             </tr>
         );
     }
