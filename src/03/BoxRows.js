@@ -20,7 +20,7 @@ const BoxRows = ({ mv }) => { //case2) 오브젝트로 받아서 해버리기. �
     const[footTag, setFootTag]=useState('');
     const[footTag2, setFootTag2]=useState('');
     const[footTag3, setFootTag3]=useState('');
-    const[footTag4, setFootTag4]=useState('');
+    const[footTag4, setFootTag4]=useState(''); //4개 다하지 말고 빽틱 이용
 
 
     const showMv = (row) => {
@@ -34,14 +34,14 @@ const BoxRows = ({ mv }) => { //case2) 오브젝트로 받아서 해버리기. �
 
 //교수님버전
 //    const [detail, setDetail] = useState(1,2,3); // 이렇게 초기값 주면 1만들어간다. ([1,2,3])하면 배열1개가 들어가니 전부 넣는거 가능. 지금은 한개만 들어강
-//   const showMv = (line)=>{
 
-//      let tempTag = <tr>
-//  <td className='tempsp'>[{line.movieCd}]</td>
-// <td className='tempsp'>{line.movieNm}</td>
-// <td className='tempsp' colSpan={2}>개봉일 : {line.openDt}</td>    
-// </tr>
-// setDetail(tempTag);
+//   const showMv = (line)=>{
+//              let tempTag = <tr>
+//                              <td className='tempsp'>[{line.movieCd}]</td>
+//                              <td className='tempsp'>{line.movieNm}</td>
+                             // <td className='tempsp' colSpan={2}>개봉일 : {line.openDt}</td>    
+                             // </tr>
+                             // setDetail(tempTag);
 // }
 
 // 아래 이 부분도
