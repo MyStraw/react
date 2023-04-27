@@ -1,6 +1,56 @@
 .won{
     display: inline-flex;
-    width : 150px;
+    width : 6.5em;
     justify-content: right;
     
+}
+
+tfoot>tr{
+    background-color: rgb(118, 118, 218);
+    
+}
+
+tfoot td{
+    color: aliceblue;
+}
+
+
+h1 {
+    margin: 0px;   
+    text-align: center;
+}
+
+article{
+    background-image: url(./back.jpg);       
+}
+
+tbody td {
+    color: aliceblue;
+    
+}
+
+#down {
+    color: rgb(0, 0, 255);
+}
+
+#up {
+    color:rgb(255, 0, 0)
+}
+
+.tempsp {
+    display: inline-flex;
+    width : 120px;
+    height: 30px;
+    background-color: blue;
+    color:aliceblue
+}
+
+.tempsp {
+    display: inline-flex;
+    width : 40%;
+    height: 30px;
+}
+
+tfoot {
+    background-color: brown;
 }

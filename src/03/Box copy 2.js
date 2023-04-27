@@ -1,6 +1,5 @@
 import BoxRows from "./BoxRows";
-import "./BoxRows.css";
-import style from './BoxRows.module.css';
+
 
 //fetch 를 여기로 영화정보를 줬다. let~한거. 프롭스로 boxrows로 정보를 보내줘.
 //첨부터 boxrows로 해도 되겠지만 연습. 프로퍼티
@@ -20,17 +19,6 @@ const Box = () => {
     // <td colspan = "2"> 냐하하 : 80 </td> 이래주면 각 칸에 냐하하, 180이 들어간거 2칸을 하나로 병합해준다. 1만쓰면 2번째칸 비어있게 되네?
     // rowspan. 열당 행. 세로 병합
 
-    // mvlist를 자식인 boxrow에 줘. 꼭 data가 아니어도 구분하는 태그여도 된다. 이때 props를 썼다.
-    // 내가있는 모든 데이터를 넘겨줘야 하나? 아니다. mv1="1" 1같은 그냥값을 줄수도 있다.(속성값)
-    // 여기서 mv는 mvlist 라는 배열을 넘겼다.
-
-    // 여기는 boxrow 아래쪽에 가서 복습부분 확인해봐. 하트
-
-    // 날짜 바뀔때마다 영화정보가 바뀌어야 하니, 이것도 state 변수로 해주자. 우리 앞에서 js에서 날짜 따와서 날짜 선택하면 날짜별로 영화순위 바꾸는걸 했었다.
-// 클릭 이벤트 발생하려면 어떻게 달거냐?
-// 온클릭 이벤트 달아줘야. how? -> boxrow 가서 tr 보면 "mytr"
-// key //❤
-
 
     return (
         <main className="container">
@@ -38,7 +26,7 @@ const Box = () => {
                 <header><h1>일일박스오피스</h1></header>
                 <table>
                     <thead>
-                        <tr className={style.movie}>
+                        <tr>
                             <th scope="col">순위</th>
                             <th scope="col">영화명</th>
                             <th scope="col">매출액</th>
