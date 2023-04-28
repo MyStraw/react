@@ -29,21 +29,30 @@ const Frcst = () => {
 
     //let bodyTag; 근데 이렇게 해서 돔에 {bodyTag} 하면 안된다. 스테이트 변수를 해야돼. setbodyTag로 해야.
     const [bodyTag, setbodyTag] = useState(''); //초기값 줘야 ''
-
+    const [selDt, setselDt] = useState('');
     const detail = (k) => {
         let dtcnItem = dtcn[k].split(',') // 배열이 됐네 // 문자열 한방에 하니까 구분이 안가. 지역별로 쪼개. 쉼표 기준으로 split으로 쪼개. 쪼개니까 배열이생겨. 
         //div grid로 감싸니까 피코가 알아서 자동배치 해줬네. 지역별로 들어는 갔어.
         //['서울:낮음', '부산:인천'] -> 이걸 컴마 기준으로 쪼갰어 이 안에 또 ['서울', '낮음']
+        setselDt(k);
         dtcnItem = dtcnItem.map((item) => item.split(':'));
         console.log(dtcnItem)
         dtcnItem = dtcnItem.map((item) =>
             <div key={item[0]}>
+
                 <span className={style.sp1}>{item[0]}</span>
-                {item[1].trim() === "낮음" ? <span className={style.sp21}>{item[1]}👎</span>
-                :item[1].trim() === '보통' ? <span className={style.sp22}>{item[1]}👊</span>
-                :<span className={style.sp23}>{item[1]}👍</span>}                
+                <span className={item[1].trim() === '낮음' ? style.sp21 : item[1].trim() === '높음' ? style.sp22 : style.sp23}>{item[1]}</span>
+             
+                {/*{item[1].trim() === "낮음" ? <span className={style.sp21}>{item[1]}</span>
+                    : item[1].trim() === '보통' ? <span className={style.sp22}>{item[1]}</span>
+                        : <span className={style.sp23}>{item[1]}</span>} */}
             </div>
         )
+                            // 삼항연산자 한줄로 만들기. jsx에서는 조건문 if로 안된다. 삼항연산자로.
+
+
+
+
 
 
         // console.log(k, dtcn[k]);
@@ -59,8 +68,8 @@ const Frcst = () => {
 
 
     let dtTag = []; //결과가 배열. map 써서 하나씩 갖고와. 
-    dtTag = Object.keys(dtcn).map((item, idx) =>
-        <div className={style.dt}
+    dtTag = Object.keys(dtcn).map((item, idx) => //{selDt === item ? style.dt1 : style.dt}
+        <div className={selDt === item ? style.dt1 : style.dt}
             key={'dt' + idx}
             onClick={() => detail(item)}>
             {item}

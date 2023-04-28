@@ -1,6 +1,7 @@
 .dt{
     display :  inline-flex;   
-    background-color: rgb(67, 157, 236);
+    background-color: rgba(39, 236, 144, 0.623);
+    color:black;
     justify-content: center;
     align-items: center;
     height: 50px;
@@ -8,8 +9,19 @@
 }
 
 .dt:hover {
-    background-color: rgb(70, 5, 56);
+    background-color: rgba(102, 54, 91, 0.507);
     color :  white;
+}
+
+.dt1{
+    display :  inline-flex;   
+    background-color: rgb(70, 5, 56);
+    color: aliceblue;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 10px;
+
 }
 
 
@@ -31,4 +43,8 @@
 
 h1{
     text-align: center;
+}
+
+header{
+background-image: url(./sky.jpg);   
 }
