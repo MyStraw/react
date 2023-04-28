@@ -11,3 +11,24 @@
     background-color: rgb(70, 5, 56);
     color :  white;
 }
+
+
+.sp1, .sp2 {
+    font-weight: bold;
+}
+
+.sp21 {
+    color: blue;
+}
+
+.sp22{
+    color : green;
+}
+
+.sp23{
+    color : red;
+}
+
+h1{
+    text-align: center;
+}

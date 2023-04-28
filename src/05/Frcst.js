@@ -21,7 +21,7 @@ const Frcst = () => {
     dtKey.map((item, idx) =>
         dtcn[data[item]] = data[cnKey[idx]] // dtcn 오브젝트의 [키] = 값. dtcn[data[item]] = data[cnKey[idx]] .   // dtKey.map(문자열, 인덱스) ->
     );
-    console.log(dtcn)
+    //  console.log(dtcn)
 
     //상세정보
 
@@ -31,11 +31,28 @@ const Frcst = () => {
     const [bodyTag, setbodyTag] = useState(''); //초기값 줘야 ''
 
     const detail = (k) => {
+        let dtcnItem = dtcn[k].split(',') // 배열이 됐네 // 문자열 한방에 하니까 구분이 안가. 지역별로 쪼개. 쉼표 기준으로 split으로 쪼개. 쪼개니까 배열이생겨. 
+        //div grid로 감싸니까 피코가 알아서 자동배치 해줬네. 지역별로 들어는 갔어.
+        //['서울:낮음', '부산:인천'] -> 이걸 컴마 기준으로 쪼갰어 이 안에 또 ['서울', '낮음']
+        dtcnItem = dtcnItem.map((item) => item.split(':'));
+        console.log(dtcnItem)
+        dtcnItem = dtcnItem.map((item) =>
+            <div key={item[0]}>
+                <span className={style.sp1}>{item[0]}</span>
+                {item[1].trim() === "낮음" ? <span className={style.sp21}>{item[1]}👎</span>
+                :item[1].trim() === '보통' ? <span className={style.sp22}>{item[1]}👊</span>
+                :<span className={style.sp23}>{item[1]}👍</span>}                
+            </div>
+        )
 
-        console.log(k, dtcn[k]);
-    //  bodytag = dtcn[k];
-    //스테이트 변수 3단계
-        setbodyTag(dtcn[k]);
+
+        // console.log(k, dtcn[k]);
+
+        //  bodytag = dtcn[k];
+        //스테이트 변수 3단계
+        //    setbodyTag(dtcn[k]);
+
+        setbodyTag(dtcnItem);
 
     }
 
@@ -51,22 +68,11 @@ const Frcst = () => {
     );
 
 
-
-
-
-
-
-
-
-
-
     // key 값을 유일하게 만들어야 한다. 'dt' + idx 이걸로. idx는 걍 인덱스로 숫자만 나오니 별로.
     // let dtTag = []; //결과가 배열. map 써서 하나씩 갖고와. 
     // dtTag = Object.keys(dtcn).map((item)=>
     // <div key={item}>{item}</div>           //key 값으로 item을 해줘도 된다. key값 없이하니 콘솔창에 오류나~
     // );
-
-
 
 
     return (
@@ -78,7 +84,9 @@ const Frcst = () => {
                         {dtTag}
                     </div>
                 </header>
-                {bodyTag}
+                <div className="grid">
+                    {bodyTag}
+                </div>
             </article>
         </main>
     );
