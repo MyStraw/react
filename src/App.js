@@ -8,16 +8,18 @@ import './App.css';
 //import './03/BoxRows.css'
 //import MyDiv from './04/MyDiv';
 //import Frcst from './05/Frcst';
-import Taccident from './06/Taccident';
+//import Taccident from './06/Taccident';
+import MyRef from './07/MyRef';
 
 function App() {
   return (
     // <Hello /> //리액트는 반드시 사용자 정의태그 갖다 붙일때 시작과 끝이 있어야한다.    
     // <MyClock/>
-    //  <Box/>  
-   // <Mydiv />
-   //<Frcst/>
-   <Taccident/>
+    // <Box/>  
+    // <Mydiv />
+    // <Frcst/>
+    // <Taccident/>
+    <MyRef />
   );
 }
 

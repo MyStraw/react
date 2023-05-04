@@ -1,8 +1,8 @@
 
 import style from './Taccident.module.css';
 
-const TaccidentNav1 = ({ c1, sel1, setSel1 }) => { //프롭스로 정보 넘겨오기. useState까지 같이 다 넘겨와.
-//    console.log("TaccidentNav1", c1) //넘겨왔는지 확인.
+const TaccidentNav1 = ({ c1, setSel1 }) => { //프롭스로 정보 넘겨오기. useState까지 같이 다 넘겨와.
+    //    console.log("TaccidentNav1", c1) //넘겨왔는지 확인.
 
     // const show = (item)  => {
     //     console.log(item)
@@ -21,7 +21,7 @@ const TaccidentNav1 = ({ c1, sel1, setSel1 }) => { //프롭스로 정보 넘겨�
     return (
         <nav>
             <ul>
-                <h1>사고유형_대분류</h1>
+                <h4>사고유형 대분류</h4>
             </ul>
             <ul>
                 {btTag}

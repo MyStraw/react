@@ -1,6 +1,6 @@
 import TaccidentNav1 from './TaccidentNav1';
 import TaccidentNav2 from './TaccidentNav2';
-import TaccidentNav3 from './TaccidentNav3';
+import TaccidentDetail from './TaccidentDetail';
 import dataTaccident from './dataTaccident.json';
 import { useState, useEffect } from 'react';
 
@@ -42,31 +42,33 @@ const Taccident = () => {
     const [sel1, setSel1] = useState(0);//초기값 0. sel1 에 0이 들어가있다. N =>대분류 선택.
     const [sel2, setSel2] = useState([]); //=>중분류 선택.
     const [selData, setSelData] = useState({});
+    // const [detail, setDetail] = useState(' ');
 
+    
 
 
     useEffect(() => {
-        console.log('TaccidentNav1 sel1 useEffect []', sel1); //찍을때마다 콘솔에 sel1이 찍히는게 보이게 된다.
+        //console.log('TaccidentNav1 sel1 useEffect []', sel1); //찍을때마다 콘솔에 sel1이 찍히는게 보이게 된다.
     }, []); //디펜던시 어레이에 아무것도 없을때 -> 렌더링시. 맨처음 한번만하고 클릭시 아무일도 안일어남. 
 
     useEffect(() => {
-        console.log('TaccidentNav1 sel1 useEffect sel1', sel1);
-    }, [sel1]); //디펜던시 어레이에 sel1이 있을때 -> sel1만 일어남. 클릭시. 바뀐다.
+        //console.log('TaccidentNav1 sel1 useEffect sel1', sel1);
+    }, [sel1]); //디펜던시 어레이에 sel1이 있을때 -> sel1만 일어남. 클릭시. 변수가 바뀔때마다 변함.
 
     useEffect(() => {
-        console.log('TaccidentNav1 sel1 useEffect', sel2);// 대분류, 중분류 같은거 뽑아내야. sel2 타입은 배열.
+        //console.log('TaccidentNav1 sel1 useEffect', sel2);// 대분류, 중분류 같은거 뽑아내야. sel2 타입은 배열.
         let temp = data.filter((item) => item.사고유형_대분류 === sel2[0] && item.사고유형_중분류 === sel2[1]);
         setSelData(temp[0]); //대분류, 중분류 같은게 1개밖에 안나오니까 필터의 결과는 배열 1개. selData 0번째꺼를 가져오면 오브젝트가 된다.[]를 풀어주는거.
     }, [sel2]);
 
-    useEffect(()=>{
-        console.log('TaccidentNav1 selData useEffect', selData);
+    useEffect(() => {
+        //console.log('TaccidentNav1 selData useEffect', selData);
     }, [selData])
 
 
     useEffect(() => {
-        console.log('TaccidentNav1 sel1 useEffect', sel1);
-        console.log('TaccidentNav1 sel2 useEffect', sel2);
+        //console.log('TaccidentNav1 sel1 useEffect', sel1);
+        //console.log('TaccidentNav1 sel2 useEffect', sel2);
     }); //아무것도없을때. 콘솔 확인해보기
 
 
@@ -79,12 +81,18 @@ const Taccident = () => {
                     <TaccidentNav1 c1={c1} sel1={sel1} setSel1={setSel1} />
                     <TaccidentNav2 c2={c2} sel1={sel1} sel2={sel2} setSel2={setSel2} />
                 </header>
-                <body>
-                    <TaccidentNav3 c2={c2} sel1={sel1} sel2={sel2} setSel2={setSel2} />
-                </body>
+                
+                {selData && <TaccidentDetail selData = {selData} />}
+                
             </article>
         </main>
     );
 }
 
 export default Taccident;
+
+//<TaccidentDetail selData={selData || ''} /> 없는걸 찍으라고 하니까 에러가 떴네. || 이거 써서 ''
+
+//
+
+//<TaccidentDetail selData={selData || ''}  /> 짝찌가 해준거. </header>아래에.
