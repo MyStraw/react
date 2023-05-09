@@ -76,8 +76,6 @@ const MyRef = () => {
 
                         </div>
                     </form>
-
-
                 </header>
                 <div>
                     {itemTag}
