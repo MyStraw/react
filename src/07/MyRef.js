@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+//import style from "./MyRef.module.css";
+
 //새로고침 하면 커서가 input에 있으면 좋은데 마우스로 찍어야 커서가 생성된다.
 //이걸 해볼거야
 
@@ -11,6 +13,12 @@ const MyRef = () => {
     const itemArr = useRef([]); //바뀌는게 배열로 들어간다. 
     const [itemTag, setItemTag] = useState();
 
+    // itemTag = itemArr.current.map((item, idx) => (
+    //     <div key={idx} className={style.item}>
+    //       {item}
+    //     </div>
+    //   ));
+
 
     useEffect(() => { // 렌더링(새로고침) 할때 처음 딱 한번 되는거->useEffect 에서 (()=>{},[])
         txtref2.current.focus(); //focus 하니까 커서 깜빡인다. 두개 만들어서 txtref2에 깜박인다. 새로고침시에.
@@ -21,6 +29,20 @@ const MyRef = () => {
         e.preventDefault(); //자바스크립트 할때. form 태그시에. preventDefalut. 새로고침 방지. 이거 쓰기. 
         itemArr.current = [...itemArr.current, txtref2.current.value]; //변수의 값을 바꾼거. 
         console.log("addItem =", itemArr.current);
+
+
+        // const newItem = txtref2.current.value;
+        // if (!itemArr.current.some(item => item.value === newItem)) {
+        //     itemArr.current = [...itemArr.current, { key: Date.now(), value: newItem }];
+        //     setItemTag(itemArr.current.map((item, idx) => (
+        //         <div key={item.key} className={style.item}>
+        //             {item.value}
+        //         </div>
+        //     )));
+
+        // }
+
+        // txtref2.current.value = "";
 
     }
 
