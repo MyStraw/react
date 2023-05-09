@@ -32,6 +32,8 @@ const Box = () => {
         dt1.current.value = `${yesterday.getFullYear()}-${month}-${day}`; //새로고침 했을때 달력에 어제날짜 떠잇게끔. 이거 없으면 그냥 연-월-일 이라고만 표시돼있다.
         getData(seldt);
 
+        
+
     }, []);
 
 
@@ -39,7 +41,7 @@ const Box = () => {
     //날짜 변경시 fetch 한번 더 던지고, 이걸 갖고오는 데이터를 State 변수에 넣어주면 된다.
 
 
-    console.log(mvlist);
+//    console.log(mvlist);
 
     //날짜 입력창
 
@@ -96,7 +98,7 @@ const Box = () => {
                             <th scope="col">증감</th>
                         </tr>
                     </thead>
-                    {mvlist && <BoxRows mv={mvlist} />} {/*mv리스트 있던거 날리고 날자바뀌는걸로 해서.mv리스트가 있어야 날라가게끔.*/}
+                    {mvlist && <BoxRows mv={mvlist} />} {/*mv리스트 있던거 날리고 날자바뀌는걸로 해서.mv리스트가 있어야 날라가게끔. 다른날짜 넘기면 이거 초기화 되게 해봐*/}
                 </table>
             </article>
         </main>
