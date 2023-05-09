@@ -1,0 +1,55 @@
+import BoxRows from "./BoxRows";
+import "./BoxRows.css";
+import style from './BoxRows.module.css';
+
+//fetch 를 여기로 영화정보를 줬다. let~한거. 프롭스로 boxrows로 정보를 보내줘.
+//첨부터 boxrows로 해도 되겠지만 연습. 프로퍼티
+//내가 만든 태그에 내가 속성을 만든것. 사용자 정의태그 하고있잖앙~ <a href~> 이거처럼
+//<BoxRows mv={mvlist}/>
+const Box = () => {
+    let mvlist = [{ "rnum": "1", "rank": "1", "rankInten": "0", "rankOldAndNew": "OLD", "movieCd": "20231089", "movieNm": "존 윅 4", "openDt": "2023-04-12", "salesAmt": "416368610", "salesShare": "37.6", "salesInten": "-18390858", "salesChange": "-4.2", "salesAcc": "9595409959", "audiCnt": "41361", "audiInten": "-2051", "audiChange": "-4.7", "audiAcc": "915156", "scrnCnt": "1315", "showCnt": "3622" }, { "rnum": "2", "rank": "2", "rankInten": "0", "rankOldAndNew": "OLD", "movieCd": "20226270", "movieNm": "스즈메의 문단속", "openDt": "2023-03-08", "salesAmt": "142284553", "salesShare": "12.9", "salesInten": "-15126729", "salesChange": "-9.6", "salesAcc": "48980254937", "audiCnt": "14449", "audiInten": "-1701", "audiChange": "-10.5", "audiAcc": "4760500", "scrnCnt": "785", "showCnt": "1888" }, { "rnum": "3", "rank": "3", "rankInten": "1", "rankOldAndNew": "OLD", "movieCd": "20226489", "movieNm": "리바운드", "openDt": "2023-04-05", "salesAmt": "99027901", "salesShare": "8.9", "salesInten": "-5949430", "salesChange": "-5.7", "salesAcc": "5070911452", "audiCnt": "11303", "audiInten": "-374", "audiChange": "-3.2", "audiAcc": "527919", "scrnCnt": "619", "showCnt": "1254" }, { "rnum": "4", "rank": "4", "rankInten": "-1", "rankOldAndNew": "OLD", "movieCd": "20225865", "movieNm": "옥수역귀신", "openDt": "2023-04-19", "salesAmt": "95791000", "salesShare": "8.7", "salesInten": "-39620800", "salesChange": "-29.3", "salesAcc": "235542800", "audiCnt": "9682", "audiInten": "-4450", "audiChange": "-31.5", "audiAcc": "24434", "scrnCnt": "271", "showCnt": "807" }, { "rnum": "5", "rank": "5", "rankInten": "1", "rankOldAndNew": "OLD", "movieCd": "20200154", "movieNm": "킬링 로맨스", "openDt": "2023-04-14", "salesAmt": "66868080", "salesShare": "6.0", "salesInten": "517633", "salesChange": "0.8", "salesAcc": "964932624", "audiCnt": "7886", "audiInten": "417", "audiChange": "5.6", "audiAcc": "100751", "scrnCnt": "620", "showCnt": "1388" }, { "rnum": "6", "rank": "6", "rankInten": "-1", "rankOldAndNew": "OLD", "movieCd": "20231244", "movieNm": "렌필드", "openDt": "2023-04-19", "salesAmt": "51027439", "salesShare": "4.6", "salesInten": "-40264318", "salesChange": "-44.1", "salesAcc": "195541196", "audiCnt": "5405", "audiInten": "-4420", "audiChange": "-45", "audiAcc": "21023", "scrnCnt": "531", "showCnt": "1476" }, { "rnum": "7", "rank": "7", "rankInten": "0", "rankOldAndNew": "OLD", "movieCd": "20228555", "movieNm": "더 퍼스트 슬램덩크", "openDt": "2023-01-04", "salesAmt": "36111041", "salesShare": "3.3", "salesInten": "-3002777", "salesChange": "-7.7", "salesAcc": "47035293545", "audiCnt": "3469", "audiInten": "-252", "audiChange": "-6.8", "audiAcc": "4511807", "scrnCnt": "238", "showCnt": "336" }, { "rnum": "8", "rank": "8", "rankInten": "0", "rankOldAndNew": "NEW", "movieCd": "20231004", "movieNm": "65", "openDt": "2023-04-20", "salesAmt": "20621567", "salesShare": "1.9", "salesInten": "20621567", "salesChange": "100", "salesAcc": "23091567", "audiCnt": "2145", "audiInten": "2145", "audiChange": "100", "audiAcc": "2392", "scrnCnt": "462", "showCnt": "756" }, { "rnum": "9", "rank": "9", "rankInten": "0", "rankOldAndNew": "NEW", "movieCd": "20070202", "movieNm": "초속5센티미터", "openDt": "2007-06-21", "salesAmt": "17997600", "salesShare": "1.6", "salesInten": "17997600", "salesChange": "100", "salesAcc": "306147229", "audiCnt": "2016", "audiInten": "2016", "audiChange": "100", "audiAcc": "49859", "scrnCnt": "32", "showCnt": "32" }, { "rnum": "10", "rank": "10", "rankInten": "-1", "rankOldAndNew": "OLD", "movieCd": "20100312", "movieNm": "인셉션", "openDt": "2010-07-21", "salesAmt": "29810500", "salesShare": "2.7", "salesInten": "-17119500", "salesChange": "-36.5", "salesAcc": "44938993940", "audiCnt": "1683", "audiInten": "-1095", "audiChange": "-39.4", "audiAcc": "6003108", "scrnCnt": "21", "showCnt": "64" }];
+
+    // console.log(mvlist);//영화진흥위원회 json 배열부분 대괄호[] 안에꺼 다 긁어와
+    // th로하니까 글씨굵게 가운데정렬 된다. 제목줄이 된다. w3 사이트에 html table 확인해봐. try
+    // https://www.w3schools.com/html/html_tables.asp //https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table3
+    // 여기서 th 부분을 td로 함 바꿔봐. 위에 열 제목이 그냥 일반 글자가 된다. th의 h가 마치 h1 같은 제목효과
+
+    // https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_tbody 
+    // thead - 시맨틱 태그. 맨윗줄 th로 굵게 하고 아래 <tr>행 4개. <tr>안에 열 2개. <tbody> <tfoot> 등으로 시맨틱태그로 구분.
+    // colspan. 행당 열. 한 행에 칸이 몇개냐? 단. 각 행열 갯수가 반듯한 사각형의 테이블이어야한다. 셀병합 기능이 이거다.
+    // <td colspan = "2"> 냐하하 : 80 </td> 이래주면 각 칸에 냐하하, 180이 들어간거 2칸을 하나로 병합해준다. 1만쓰면 2번째칸 비어있게 되네?
+    // rowspan. 열당 행. 세로 병합
+
+    // mvlist를 자식인 boxrow에 줘. 꼭 data가 아니어도 구분하는 태그여도 된다. 이때 props를 썼다.
+    // 내가있는 모든 데이터를 넘겨줘야 하나? 아니다. mv1="1" 1같은 그냥값을 줄수도 있다.(속성값)
+    // 여기서 mv는 mvlist 라는 배열을 넘겼다.
+
+    // 여기는 boxrow 아래쪽에 가서 복습부분 확인해봐. 하트
+
+    // 날짜 바뀔때마다 영화정보가 바뀌어야 하니, 이것도 state 변수로 해주자. 우리 앞에서 js에서 날짜 따와서 날짜 선택하면 날짜별로 영화순위 바꾸는걸 했었다.
+// 클릭 이벤트 발생하려면 어떻게 달거냐?
+// 온클릭 이벤트 달아줘야. how? -> boxrow 가서 tr 보면 "mytr"
+// key //❤
+
+
+    return (
+        <main className="container">
+            <article>
+                <header><h1>일일박스오피스</h1></header>
+                <table>
+                    <thead>
+                        <tr className={style.movie}>
+                            <th scope="col">순위</th>
+                            <th scope="col">영화명</th>
+                            <th scope="col">매출액</th>
+                            <th scope="col">증감</th>
+                        </tr>
+                    </thead>
+                    <BoxRows mv={mvlist} />
+                </table>
+            </article>
+        </main>
+    );
+}
+
+export default Box;

@@ -1,6 +1,6 @@
 .won{
     display: inline-flex;
-    width : 6.5em;
+    width : 7.5em;
     justify-content: right;
     
 }
@@ -54,3 +54,4 @@ tbody td {
 tfoot {
     background-color: brown;
 }
+
