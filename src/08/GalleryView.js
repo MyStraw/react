@@ -33,3 +33,29 @@ const GalleryView = ({ item }) => {
 };
 
 export default GalleryView;
+
+
+// // GalleryItem.js
+// import React from "react";
+// import styles from "./Gallery.module.css";
+
+// const GalleryItem = ({ item, fullWidth }) => {
+//     return (
+//         <div className={fullWidth ? styles.fullWidth : styles.halfWidth}>
+//             <article>
+//                 <header className={styles.head}>
+//                     <div className={styles.t1}>{item.galTitle}</div>
+//                     <div className={styles.word}>{item.galPhotographyLocation}</div>
+//                 </header>
+//                 <body>
+//                     <img src={item.galWebImageUrl} alt={item.galTitle} />
+//                 </body>
+//                 <footer>
+//                     <div className={styles.word}>{item.galSearchKeyword}</div>
+//                 </footer>
+//             </article>
+//         </div>
+//     );
+// };
+
+// export default GalleryItem;

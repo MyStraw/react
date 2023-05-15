@@ -73,3 +73,27 @@ const Gallery = () => {
 }
 
 export default Gallery;
+
+
+
+// // Gallery.js
+// // ...
+// const renderGalleryItems = () => {
+//     const items = [];
+//     const itemCount = mvlist ? Math.min(10, mvlist.length) : 0;
+
+//     for (let i = 0; i < itemCount; i++) {
+//         const item = mvlist[i];
+//         const fullWidth = (i + 1) % 2 !== 0 && (i + 1) === itemCount;
+
+//         items.push(<GalleryItem key={item.galContentId} item={item} fullWidth={fullWidth} />);
+//     }
+
+//     return items;
+// };
+
+// return (
+//     // ...
+//     <div className={styles.galleryContainer}>{mvlist && renderGalleryItems()}</div>
+//     // ...
+// )
