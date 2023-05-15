@@ -3,7 +3,8 @@
 
 import styles from "./Gallery.css";
 import { useState, useEffect, useRef } from 'react';
-import GalleryItem from "./GalleryView";
+//import GalleryItem from "./GalleryView";
+import GalleryView from "./GalleryView";
 
 
 const Gallery = () => {
@@ -63,7 +64,7 @@ const Gallery = () => {
 
                     </div>
                     <div>{mvlist&&mvlist.map(item => (
-                        <GalleryItem key={item.galContentId} item={item}/>
+                        <GalleryView key={item.galContentId} item={item}/>
                     ))}</div>                    
                 </article>
             </form>

@@ -11,7 +11,7 @@ import styles from "./Gallery.module.css";
 //그 옆에꺼 찍을지 말지는, 그 다음 i가 있으면 i+1을 찍어.
 //없으면 안찍어. 그럼 아티클 1개밖에 안돼~~
 
-const GalleryItem = ({ item }) => {
+const GalleryView = ({ item }) => {
     return (
         <div>
             <article>
@@ -32,4 +32,4 @@ const GalleryItem = ({ item }) => {
     );
 };
 
-export default GalleryItem;
+export default GalleryView;
