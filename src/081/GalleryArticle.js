@@ -3,7 +3,7 @@ import styles from "./Gallery.module.css";
 
 const GalleryArticle = ({ item }) => {
 let tags = item.galSearchKeyword.split(',');
-console.log(tags) ;//배열이네
+console.log(tags) ;//배열이네. map 돌수있겄지.
 tags = tags.map((i)=><div className={styles.footer}>{i}</div>)
 
     return (
