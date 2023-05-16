@@ -1,0 +1,43 @@
+.t1{
+    color: rgb(0, 71, 179);
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.head{
+    display: flex;
+    justify-content: left;
+}
+
+.word{
+    justify-content: center;
+    align-items: center;
+}
+
+/* .halfWidth {
+    flex: 1;
+    width: 50%;
+}
+
+.fullWidth {
+    flex: 1;
+    width: 100%;
+} */
+
+
+.tags{      
+    
+
+}
+
+.footer{
+    display: inline-flex;
+    margin: 10px;
+    background-color: rgb(5, 14, 54);
+    border-radius: 3%;
+    color: aliceblue;
+}
+
+.title{
+    color: blue;
+}
