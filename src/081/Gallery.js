@@ -99,7 +99,7 @@ const Gallery = () => {
                         <div>
                             <input ref={txt1} type="text" id="txt1" name="txt1" placeholder="키워드를 입력하세요" required />
                         </div>
-                        <div className={styles.btDiv}>
+                        <div className="btDiv">
                             <button onClick={(e) => show(e)}>확인</button>
                             <button onClick={(e) => showClear(e)}>취소</button>
                         </div>
