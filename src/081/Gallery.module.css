@@ -41,3 +41,16 @@
 .title{
     color: blue;
 }
+
+.btDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.btDiv>button {
+    margin-left: 5px;
+    background-color: rgb(25, 179, 107);
+}
