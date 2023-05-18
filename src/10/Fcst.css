@@ -1,0 +1,14 @@
+.dan{
+    display: flex;
+    justify-content:center;
+    align-items: center;   
+
+}
+
+.dan>li:first-of-type{
+    background-color: rgb(18, 91, 199);
+    border-radius: 5%;    
+    padding:5px;
+    color: black;
+}
+

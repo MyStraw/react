@@ -12,9 +12,9 @@ import './App.css';
 //import MyRef from './07/MyRef';
 //import Gallery from './08/Gallery';
 //import Gallery from './08-1/Gallery';
-import RouteMain from './09/RouteMain';
+//import RouteMain from './09/RouteMain';
 //import FsctNav from './09-1/FsctNav';
-
+import Fcst from './10/Fcst';
 function App() {
   return (
     // <Hello /> //리액트는 반드시 사용자 정의태그 갖다 붙일때 시작과 끝이 있어야한다.    
@@ -25,8 +25,8 @@ function App() {
     // <Taccident/>
     //<MyRef />
    //<Gallery/>
-   <RouteMain/>
-  // <FsctNav/>
+  // <RouteMain/>
+   <Fcst/>
   );
 }
 

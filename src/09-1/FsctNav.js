@@ -15,7 +15,8 @@ const FsctNav = () => {
         url = url + '&base_date=20230517';
         url = url + '&base_time=0500';
         url = url + '&pageNo=1';
-        url = url + `&nx=55&ny=127`;
+        url = url + `&nx=55`; //값 바뀔듯
+        url = url + `&ny=127`;
         url = url + '&dataType=json';
 
         console.log(url)
