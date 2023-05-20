@@ -11,7 +11,6 @@ const FcstNav = () => {
             <ul>
                 <li><Link to='/' role='button'>단기예보메인</Link></li>
             </ul>
-
         </nav>
 
     );
