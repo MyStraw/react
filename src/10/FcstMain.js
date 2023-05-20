@@ -70,10 +70,10 @@ const handleButtonClick = (type) => {
     //----------------------
     let numToSet = num;
     if (type === 'ultra') {
-        numToSet = 900;
+        numToSet = 60;
     }
     else if (type === 'vilage') {
-        numToSet = 60;
+        numToSet = 900;
     }
     setNum(numToSet);
     //---------------------- 콘솔에서 확인이 잘 안돼서 이렇게 했다.
