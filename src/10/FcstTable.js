@@ -1,4 +1,6 @@
 const FcstTable = ({ jsonData, selectedCategoryValue }) => {
+
+    
     if (!jsonData) {
         return <div>Loading...</div>;
     }
