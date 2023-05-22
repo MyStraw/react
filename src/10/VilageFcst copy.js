@@ -1,4 +1,4 @@
-import FcstTable from "./FcstTable";
+import FcstTable from "./FcstTable copy";
 import { useLocation } from "react-router-dom";
 import qs from 'query-string';
 
