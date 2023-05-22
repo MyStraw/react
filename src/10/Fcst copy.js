@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import UltraSrtFcst from "./UltraSrtFcst";
-import VilageFcst from "./VilageFcst";
-import FcstMain from "./FcstMain";
-import FcstNav from "./FcstNav";
+import UltraSrtFcst from "./UltraSrtFcst copy";
+import VilageFcst from "./VilageFcst copy";
+import FcstMain from "./FcstMain copy";
+import FcstNav from "./FcstNav copy";
 import getcode from "./getcode.json"
 
 
-const Fcst = () => {
+const Fcstcopy= () => {
     const ultraCategory = getcode.filter((item) => item["예보구분"] === '초단기예보').map((item) => item["항목명"]);
     const vilageCategory = getcode.filter((item) => item["예보구분"] === '단기예보').map((item) => item["항목명"]);
 
@@ -28,4 +28,4 @@ const Fcst = () => {
     );
 }
 
-export default Fcst;
+export default Fcstcopy;

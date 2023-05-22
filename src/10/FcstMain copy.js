@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import xy from "./getxy.json"
 import getcode from "./getcode.json"
 import { useState, useEffect, useRef } from 'react';
-import UltraSrtFcst from "./UltraSrtFcst";
-import VilageFcst from "./UltraSrtFcst";
+import UltraSrtFcst from "./UltraSrtFcst copy";
+import VilageFcst from "./UltraSrtFcst copy";
 
 
 const FcstMain = () => {
