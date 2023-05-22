@@ -1,11 +1,6 @@
-const FcstTable = ({ jsonData, selectedCategoryValue }) => {
+const FcstTable = ({  }) => {
 
-    
-    if (!jsonData) {
-        return <div>Loading...</div>;
-    }
-
-    const filteredItems = jsonData.response.body.items.item.filter(item => item.category === selectedCategoryValue);
+  
 
 
     return (
@@ -18,19 +13,13 @@ const FcstTable = ({ jsonData, selectedCategoryValue }) => {
                     <th scope="col">예보 값</th>                    
                 </tr>
             </thead>          
-            <tbody>
-                {filteredItems.map(item => (
-                    <tr key={`${item.fcstDate}-${item.fcstTime}`}>
-                        <td>{selectedCategoryValue}</td>
-                        <td>{item.fcstDate}</td>
-                        <td>{item.fcstTime}</td>
-                        <td>{item.fcstValue}</td>
-                    </tr>
-                ))}
-            </tbody>  
+           
         </table>
 
     );
 }
 
 export default FcstTable;
+
+
+

@@ -17,7 +17,8 @@ const Fcst = () => {
             <FcstNav/>            
             <Routes>
                     <Route path='/' element={<FcstMain  /> } />
-                    <Route path='/ultra/:dt/:area/:x/:y' element={<UltraSrtFcst ultraCategory={ultraCategory} />} />                    
+                    <Route path='/ultra/:dt/:area/:x/:y' element={<UltraSrtFcst ultraCategory={ultraCategory} />} />
+                    
                     <Route path='/vilage/:dt/:area/:x/:y' element={<VilageFcst vilageCategory={vilageCategory} />} />
             </Routes>            
         </main>
