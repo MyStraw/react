@@ -14,7 +14,7 @@ import './App.css';
 //import Gallery from './08-1/Gallery';
 //import RouteMain from './09/RouteMain';
 //import FsctNav from './09-1/FsctNav';
-import Fcst from './10/Fcst';
+//import Fcst from './10/Fcst';
 import Fcstcopy from './10/Fcst copy';
 function App() {
   return (
@@ -27,8 +27,8 @@ function App() {
     //<MyRef />
    //<Gallery/>
   // <RouteMain/>
-  // <Fcst/>
-   <Fcstcopy/>
+ // <Fcst/>
+  <Fcstcopy/>
   );
 }
 

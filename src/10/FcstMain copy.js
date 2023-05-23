@@ -15,6 +15,12 @@ const FcstMain = () => {
     const [date, setDate] = useState('');
     const [area, setArea] = useState('');
 
+
+
+
+
+
+
     const ops = xy.map((item) =>
         <option value={item.행정구역코드} key={item.행정구역코드}>
             {item["1단계"]}
@@ -115,8 +121,6 @@ const areaChange = (event) => {
         //날짜선택
 
         getData(num, date, selItem["격자 X"], selItem["격자 Y"]);
-
-
 
     } else {
         alert('지역을 선택하세요')
