@@ -7,7 +7,8 @@ const FcstTable = ({ address = [], values }) => {
 
     const filteredItems = address.filter(item => item.category === values);
 
-    const baseTime = filteredItems.map(item=> item.baseTime);
+    const baseTime = filteredItems.map((item)=> item.baseTime);
+    const baseDate = filteredItems.map((item)=> item.baseDate);
     console.log(baseTime);
 
 
@@ -25,7 +26,7 @@ const FcstTable = ({ address = [], values }) => {
             <tbody>
                 <tr>
                     <td></td>
-                    <td></td>
+                    <td>{baseDate}</td>
                     <td>{baseTime}</td>
                     <td></td>
                 </tr>
