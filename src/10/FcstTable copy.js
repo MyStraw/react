@@ -1,12 +1,13 @@
 
 
 
-const FcstTable = ({ address, values }) => {
+const FcstTable = ({ address = [], values }) => {
     console.log("address", address);
     console.log("values",values);
 
     const filteredItems = address.filter(item => item.category === values);
 
+    const baseTime = filteredItems.map(item=> item.baseTime);
 
 
 
@@ -24,7 +25,7 @@ const FcstTable = ({ address, values }) => {
                 <tr>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td>{baseTime}</td>
                     <td></td>
                 </tr>
             </tbody>
