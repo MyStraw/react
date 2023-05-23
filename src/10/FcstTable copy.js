@@ -8,6 +8,7 @@ const FcstTable = ({ address = [], values }) => {
     const filteredItems = address.filter(item => item.category === values);
 
     const baseTime = filteredItems.map(item=> item.baseTime);
+    console.log(baseTime);
 
 
 
