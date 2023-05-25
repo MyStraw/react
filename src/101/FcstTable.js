@@ -9,44 +9,23 @@ const FcstTable = ({items, gubun}) => {
     const [opTags, setOptags] = useState();
     const sel = useRef();
     
-    useEffect(() => { 
-        let url = 'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?' 
+    useEffect(() => {         
 
-        url = url + 'serviceKey=9IZgTnv%2FlgPK2c%2BJcMk4qKiZfz98OMWrRS4OExS9S%2BVHYm4Axmh%2BUzFH4I0UdNByGrTIfzoyNTSshiljEkvcDw%3D%3D';
-        url = url + '&numOfRows=60'; 
-        url = url + '&pageNo=1';
-        url = url + '&base_date=20230524'; 
-        url = url + '&base_time=0630';
-        url = url + '&nx=55';
-        url = url + '&ny=127';
-        url = url + '&dataType=json'; 
-        console.log(url);
-
-
-        fetch(url) //1.
-            
-            .then((resp) => resp.json())            
-            .then((data) => setItems(data.response.body.items.item)) 
-            .catch((err) => console.log(err));     
-
-        let tempcd = code.filter((i) => i["예보구분"] === "초단기예보");
+        let tempcd = code.filter((i) => i["예보구분"] === gubun);
         tempcd = tempcd.map((i, idx) =>
             <option key={i["항목값"]} value={i["항목값"]}>{(i["항목명"])}{(i["항목값"])}</option>
         );
         
         setOptags(tempcd);
-        console.log('tempcd', tempcd);
+       // console.log('tempcd', tempcd);
 
         
-    }, []);   
+    }, [gubun]);   
 
 
 
     const showItem = (e) => {
-        e.preventDefault();
-       
-        console.log('sel', sel.current.value); 
-
+        e.preventDefault();       
         
         if (items === undefined) return;
         let temp = items.filter((i) => i.category === sel.current.value);
@@ -55,8 +34,6 @@ const FcstTable = ({items, gubun}) => {
         ); 
         tempcd = tempcd[0]; 
 
-        console.log('tempcd',tempcd);
-
        
         let skyobj = {'1':'맑음', '3':'구름많음', '4':'흐림'};
         let ptyobj ={'0':'없음', '1':'비', '2':'비/눈', '3':'눈', '5':'빗방울', '6':'빗방울눈날림', '7':'눈날림'};
@@ -64,8 +41,8 @@ const FcstTable = ({items, gubun}) => {
         temp = temp.map((i, idx) =>
             <tr key={i.category + idx}>
                 <td>{tempcd["항목명"]}</td>
-                <td>{i.fcstDate}</td>
-                <td>{i.fcstTime}</td>
+                <td>{i.fcstDate.slice(0, 4)}-{i.fcstDate.slice(4, 6)}-{i.fcstDate.slice(6, 8)}</td>
+                <td>{i.fcstTime.slice(0, 2)} : {i.fcstTime.slice(2, 4)}</td>
                 <td>                    
                     {(i.category === 'SKY') ? skyobj[i.fcstValue] 
                     : (i.category === 'PTY') ? ptyobj[i.fcstValue]
@@ -75,8 +52,8 @@ const FcstTable = ({items, gubun}) => {
             </tr>
         );
 
-        console.log('items', items); 
-        console.log('temp', temp); 
+      //  console.log('items', items); 
+      //  console.log('temp', temp); 
         setTrTags(temp); 
     }
 
