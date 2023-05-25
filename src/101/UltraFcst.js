@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import code from "./getcode.json";
 import FcstTable from './FcstTable';
 
 //item만 넘겨주면 돼~ 단기예보것만.
@@ -15,7 +14,7 @@ const UltraFcst = () => {
         url = url + '&numOfRows=60';
         url = url + '&pageNo=1';
         url = url + '&base_date=20230524';
-        url = url + '&base_time=0500';
+        url = url + '&base_time=0600';
         url = url + '&nx=55';
         url = url + '&ny=127';
         url = url + '&dataType=json';
