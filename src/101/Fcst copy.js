@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import code from "./getcode.json"; //21. 코드 가져오자
-import FcstTable from './FcstTable';
+//import FcstTable from './FcstTable';
 
 
-const Fcst = () => {
+const Fcstcopy = () => {
     //날짜 주소 갖고오는거. 어느 시점에 fetch 던질까? 컴포넌트 페이지 첫 로드될때 페치 던지고 싶을때 그때 사용하는 훅이 이펙트 아닌가?
     //페치를 계속 할 필요가 없다. 첫 한번만. 유즈이펙트= 첫 렌더링이 될때 함수를 자동으로 호출. 리액트 설계.
     //state는 변수를 갖고있고.
@@ -179,14 +179,45 @@ const Fcst = () => {
 
 
     return (
-        <>
-        {items && <FcstTable items = {items} gubun='초단기예보'/>}
-        </>
-       
+        <main className="container">
+            <form>
+                <article>
+                    <header>
+                        <div className="grid">
+                            <div><h1>기상청 초단기예보</h1></div>
+                            <div>
+                                <select ref={sel} id='sel' name='sel' onChange={showItem}>
+                                    <option val=''>선택</option>
+                                    {opTags}
+                                </select>
+                            </div>
+                        </div>
+                    </header>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">자료구분코드</th>
+                                <th scope="col">예측일자</th>
+                                <th scope="col">예측시간</th>
+                                <th scope="col">예보 값</th>
+                            </tr>
+                            {items && trTags}
+                        </thead>
+                    </table>
+                </article>
+            </form>
+        </main>
     )
+
+    // return (
+    //     <>
+    //     {items && <FcstTable items = {items} gubun='초단기예보'/>}
+    //     </>
+       
+    // )
 }
 
-export default Fcst;
+export default Fcstcopy;
 //모든 결과물은 HTML로 나온다
 //복습
 //코드를 외운다? 아무 의미 없당

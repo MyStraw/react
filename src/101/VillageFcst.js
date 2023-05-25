@@ -1,33 +1,38 @@
 import { useEffect, useState, useRef } from "react";
 import code from "./getcode.json";
+import FcstTable from './FcstTable';
 
 //item만 넘겨주면 돼~ 단기예보것만.
 
 
-const FcstTable = ({items, gubun}) => {    
+const VillageFcst = () => {    
+    const gubun ='초단기예보';
+    const [items, setItems] = useState();
     const [trTags, setTrTags] = useState();
     const [opTags, setOptags] = useState();
     const sel = useRef();
+
+
     
     useEffect(() => { 
-        let url = 'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?' 
+        let url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst'       
 
         url = url + 'serviceKey=9IZgTnv%2FlgPK2c%2BJcMk4qKiZfz98OMWrRS4OExS9S%2BVHYm4Axmh%2BUzFH4I0UdNByGrTIfzoyNTSshiljEkvcDw%3D%3D';
         url = url + '&numOfRows=60'; 
         url = url + '&pageNo=1';
         url = url + '&base_date=20230524'; 
-        url = url + '&base_time=0630';
+        url = url + '&base_time=0500';
         url = url + '&nx=55';
         url = url + '&ny=127';
         url = url + '&dataType=json'; 
-        console.log(url);
+        console.log(url);   
 
 
-        fetch(url) //1.
+        fetch(url) 
             
-            .then((resp) => resp.json())            
+            .then((resp) => resp.json())             
             .then((data) => setItems(data.response.body.items.item)) 
-            .catch((err) => console.log(err));     
+            .catch((err) => console.log(err));        
 
         let tempcd = code.filter((i) => i["예보구분"] === "초단기예보");
         tempcd = tempcd.map((i, idx) =>
@@ -37,7 +42,7 @@ const FcstTable = ({items, gubun}) => {
         setOptags(tempcd);
         console.log('tempcd', tempcd);
 
-        
+       
     }, []);   
 
 
@@ -57,7 +62,7 @@ const FcstTable = ({items, gubun}) => {
 
         console.log('tempcd',tempcd);
 
-       
+        
         let skyobj = {'1':'맑음', '3':'구름많음', '4':'흐림'};
         let ptyobj ={'0':'없음', '1':'비', '2':'비/눈', '3':'눈', '5':'빗방울', '6':'빗방울눈날림', '7':'눈날림'};
 
@@ -82,37 +87,10 @@ const FcstTable = ({items, gubun}) => {
 
 
     return (
-        <main className="container">
-            <form>
-                <article>
-                    <header>
-
-                        <div className="grid">
-                            <div><h1>기상청 {gubun}</h1></div>
-                            <div>
-                                <select ref={sel} id='sel' name='sel' onChange={showItem}>
-                                    <option val=''>선택</option>
-                                    {opTags}
-                                </select>
-                            </div>
-                        </div>
-
-                    </header>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th scope="col">자료구분코드</th>
-                                <th scope="col">예측일자</th>
-                                <th scope="col">예측시간</th>
-                                <th scope="col">예보 값</th>
-                            </tr>
-                            {items && trTags}
-                        </thead>
-                    </table>
-                </article>
-            </form>
-        </main>
+        <>
+            {items && <FcstTable items={items} gubun='초단기예보' />}
+        </>
     )
 }
 
-export default FcstTable;
+export default VillageFcst;
