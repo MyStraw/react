@@ -42,9 +42,7 @@ const UltraSrtFcst = ({ ultraCategory }) => { //객체로 받아왔기때문에 
     return (
         <article>
             <header>{useParams().area}</header>
-
             {datas && <FcstTable datas={datas} gubun="초단기예보"/>}
-
         </article>
 
     );
