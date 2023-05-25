@@ -38,7 +38,7 @@ const Fcst = () => {
 
         //23. 코드가 배열이었다.
         // let tempcd = code.filter((i) => i["예보구분"] === "초단기예보");
-        //  console.log('tempce', tempcd);
+        // console.log('tempcd', tempcd);
 
 
         //24. 이제 이걸 셀렉트박스에 해보자        
@@ -85,7 +85,7 @@ const Fcst = () => {
 
         //27.여기에 실행되게. //이제 키값 에러 나니까 키값 주자 바로위에. //그리고 이제 클릭할때마다 아래 테이블 바껴야지.
         setOptags(tempcd);
-        console.log('tempce', tempcd);
+        console.log('tempcd', tempcd);
 
         //28. 이제 셀렉트가 바뀔때마다 아래 테이블이 변해야해. onchange = showItem. 사용자정의 함수 만들어.
 
@@ -148,7 +148,10 @@ const Fcst = () => {
         ); 
         tempcd = tempcd[0]; //32.까지.
 
-        let skyobj = {'1':'🌞', '3':'☁', '4':'흐림'};
+        console.log('tempcd',tempcd);
+
+
+        let skyobj = {'1':'맑음', '3':'구름많음', '4':'흐림'};
         let ptyobj ={'0':'없음', '1':'비', '2':'비/눈', '3':'눈', '5':'빗방울', '6':'빗방울눈날림', '7':'눈날림'};
 
         temp = temp.map((i, idx) =>
@@ -159,7 +162,7 @@ const Fcst = () => {
                 <td>                    
                     {(i.category === 'SKY') ? skyobj[i.fcstValue] 
                     : (i.category === 'PTY') ? ptyobj[i.fcstValue]
-                    : i.fcstValue + tempcd["단위"] }                      
+                    : i.fcstValue + tempcd["단위"] }              
                 
                 </td>
             </tr>
