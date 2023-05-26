@@ -12,7 +12,7 @@ const VillageFcst = () => {
 
     
     useEffect(() => { 
-        let url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?'       
+        let url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?'   // ultra랑 엔드포인트 부분만 다르고 앞은 똑같네? 하나로 통일 가능함!
 
         url = url + 'serviceKey=9IZgTnv%2FlgPK2c%2BJcMk4qKiZfz98OMWrRS4OExS9S%2BVHYm4Axmh%2BUzFH4I0UdNByGrTIfzoyNTSshiljEkvcDw%3D%3D';
         url = url + '&numOfRows=900'; 
