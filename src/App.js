@@ -18,6 +18,7 @@ import './App.css';
 //import Fcstcopy from './10/Fcst copy';
 import Fcst from './101/Fcst';
 import Fcstcopy from './101/Fcst copy'
+import CodeView from './102/CodeView'
 function App() {
   return (
     // <Hello /> //리액트는 반드시 사용자 정의태그 갖다 붙일때 시작과 끝이 있어야한다.    
@@ -29,8 +30,10 @@ function App() {
     //<MyRef />
    //<Gallery/>
   // <RouteMain/>
-  <Fcst/>
+  //<Fcst/>
   //<Fcstcopy/>
+  <CodeView/>
+ // <h1>App</h1>
   );
 }
 

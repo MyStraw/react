@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko"> <!--번역할까요? 안물어보게, 리액트 퍼블릭 폴더에도 있다.-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--핸드폰 볼때 width-->
+    <title>날씨예보</title>
+    <script> 
+        alert("안녕하세요.") ;
+
+        function show() {
+            var kn = form1.txt1.value;
+            if (kn=="") {
+                alert("이름을 입력하세요");
+                form1.txt1.focus();
+                return;
+            }
+            console.log(kn); 
+            alert(kn + "님 안녕하세요.") ;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>단기예보</h1>    
+    <ul>
+        <li>강수확률(POP) "%"</li>
+        <li>강수형태(PTY) 코드값</li>
+        <li>1시간 강수량(PCP) "범주 (1mm)"</li> <!--이거 초단기로 바꾸고싶어!! 이러면 또 이런거 노가다로 쳐야해. 사용자가 선택할수 있게 갈라놔. 그 많은 언어중에 사용자 입력 받는게 유일하게 form 태그-->
+        <!--https://www.w3schools.com/tags/tag_input.asp 여기서 확인해봐.-->
+    </ul>
+
+    <h1>초단기예보</h1>    
+    <ul>
+        <li>1시간 강수량(RN1) "범주 (1 mm)"</li>
+        <li>하늘상태(SKY) 코드값</li>
+        <li>동서바람성분(UUU) "m\/s"</li> 
+    </ul>
+
+    <form method="get" action="a.html" name="form1"> <!-- 확인 눌러도 안날가 가는데 이걸 메소드로. get방식, post 방식으로. a.html로 날라가게 한다. 이거 이후에 뭔가 더 하고싶다. 자바스크립트.-->
+        선택 : <input type ="text" name="txt1">
+        <!--<input type="submit" value="확인">-->
+        <input type="button" value="확인" onClick="show()">
+    </form>
+
+    <!--html인데 여기에 코드를 넣어야 할 생각을 했다. 이게 자바 스크립트. <script> 맨위에. 안녕하세요. alert라는 코드를 썼다.
+        근데 그냥 alert 하니까 무조건 나오네?. 원하는 시점을 잡고싶다. => function을 사용. 내가 부르면 나와. 호출할때만 나와라!.
+    submit(그냥 누르면 누를때마다 항상 실행되니까, 조건을 달고싶다. 내가 호출할때만) 하지않고, 난 그냥 버튼으로 할래! 하고 버튼으로 바꾸고. 함수의 호출은 어느 언어든 다 똑같다. 함수명을 불러주면 된다.
+함수를 만들어 주고. 이제 확인 눌릴때만 alert가 뜨는데, 이젠 "정승길"님 안녕하세요를 하고싶다. input에 text에서 받은걸 집어오고싶다. 이름이 있어야해 "form1" 잡아올 변수가 필요. var로 했다(지금은 안써)
+form1 아래에 txt1의 값을 받아오면 된다. form1.txt1.value 이제 이걸 넣어서 쓰면 돼. 이제 리액트. 이제 단기만 선택하면 단기로, 초단기는 초단기로. 자바스크립트로 하려면 어려워진다. -->
+</body>
+</html>

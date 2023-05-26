@@ -33,8 +33,8 @@ const UltraFcst = () => {
 
 
     return (
-        <>      
-            {items && <FcstTable items={items} gubun='초단기예보' />}
+        <>              
+            {items && <FcstTable items={items} gubun='초단기예보' area={area} dt={dt} />}
         </>
     )
 }

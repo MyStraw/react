@@ -4,7 +4,7 @@ import code from "./getcode.json";
 //item만 넘겨주면 돼~ 단기예보것만.
 
 
-const FcstTable = ({items, gubun}) => {    
+const FcstTable = ({items, gubun, area, dt}) => {    
     const [trTags, setTrTags] = useState();
     const [opTags, setOptags] = useState();
     const sel = useRef();
@@ -75,10 +75,11 @@ const FcstTable = ({items, gubun}) => {
                                 </select>
                             </div>
                         </div>
-
                     </header>
                     <table>
-                        <thead>
+                        <thead>                            
+                        <h2>{area}</h2>{dt}
+                        
                             <tr>
                                 <th scope="col">자료구분코드</th>
                                 <th scope="col">예측일자</th>
