@@ -40,23 +40,23 @@ const FcstTable = ({items, gubun}) => {
         let skyobj = {'1':'맑음', '3':'구름많음', '4':'흐림'};
         let ptyobj ={'0':'없음', '1':'비', '2':'비/눈', '3':'눈', '5':'빗방울', '6':'빗방울눈날림', '7':'눈날림'};
 
-        // temp = temp.map((i, idx) =>
-        //     <tr key={i.category + idx}>
-        //         <td>{tempcd["항목명"]}</td>
-        //         <td>{i.fcstDate.slice(0, 4)}-{i.fcstDate.slice(4, 6)}-{i.fcstDate.slice(6, 8)}</td>
-        //         <td>{i.fcstTime.slice(0, 2)} : {i.fcstTime.slice(2, 4)}</td>
-        //         <td>                    
-        //             {(i.category === 'SKY') ? skyobj[i.fcstValue] 
-        //             : (i.category === 'PTY') ? ptyobj[i.fcstValue]
-        //             : i.fcstValue + tempcd["단위"] }              
+        temp = temp.map((i, idx) =>
+            <tr key={i.category + idx}>
+                <td>{tempcd["항목명"]}</td>
+                <td>{i.fcstDate.slice(0, 4)}-{i.fcstDate.slice(4, 6)}-{i.fcstDate.slice(6, 8)}</td>
+                <td>{i.fcstTime.slice(0, 2)} : {i.fcstTime.slice(2, 4)}</td>
+                <td>                    
+                    {(i.category === 'SKY') ? skyobj[i.fcstValue] 
+                    : (i.category === 'PTY') ? ptyobj[i.fcstValue]
+                    : i.fcstValue + tempcd["단위"] }              
                 
-        //         </td>
-        //     </tr>
-        // );
+                </td>
+            </tr>
+        );
 
-      //  console.log('items', items); 
-      //  console.log('temp', temp); 
-        // setTrTags(temp); 
+       console.log('items', items); 
+       console.log('temp', temp); 
+        setTrTags(temp); 
     }
 
 
