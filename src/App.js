@@ -17,7 +17,7 @@ import './App.css';
 //import Fcst from './10/Fcst';
 //import Fcstcopy from './10/Fcst copy';
 import Fcst from './101/Fcst';
-//import Fcstcopy from './101/Fcst copy'
+import Fcstcopy from './101/Fcst copy'
 function App() {
   return (
     // <Hello /> //리액트는 반드시 사용자 정의태그 갖다 붙일때 시작과 끝이 있어야한다.    

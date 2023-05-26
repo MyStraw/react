@@ -13,7 +13,7 @@ const UltraFcst = () => {
         url = url + 'serviceKey=9IZgTnv%2FlgPK2c%2BJcMk4qKiZfz98OMWrRS4OExS9S%2BVHYm4Axmh%2BUzFH4I0UdNByGrTIfzoyNTSshiljEkvcDw%3D%3D';
         url = url + '&numOfRows=60';
         url = url + '&pageNo=1';
-        url = url + '&base_date=20230524';
+        url = url + '&base_date=20230525';
         url = url + '&base_time=0600';
         url = url + '&nx=55';
         url = url + '&ny=127';

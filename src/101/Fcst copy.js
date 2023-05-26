@@ -59,7 +59,7 @@ const Fcstcopy = () => {
         url = url + 'serviceKey=9IZgTnv%2FlgPK2c%2BJcMk4qKiZfz98OMWrRS4OExS9S%2BVHYm4Axmh%2BUzFH4I0UdNByGrTIfzoyNTSshiljEkvcDw%3D%3D';
         url = url + '&numOfRows=60'; //19. 60개 보고싶다. total이 60이니까. url 보고 확인
         url = url + '&pageNo=1';
-        url = url + '&base_date=20230524'; //오전 6시반에 갱신이 되니까 이 시간이 안지나서 보면 어제꺼가 나온다.
+        url = url + '&base_date=20230525'; //오전 6시반에 갱신이 되니까 이 시간이 안지나서 보면 어제꺼가 나온다.
         url = url + '&base_time=0630';
         url = url + '&nx=55';
         url = url + '&ny=127';
