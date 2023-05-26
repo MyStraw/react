@@ -11,7 +11,7 @@ const FcstTable = ({items, gubun}) => {
     
     useEffect(() => {         
 
-        let tempcd = code.filter((i) => i["예보구분"] === gubun);
+        let tempcd = code.filter((i) => i["예보구분"] === gubun); //{gubun} 이라고 해놨다.
         // console.log("code", code);
         tempcd = tempcd.map((i, idx) =>
             <option key={i["항목값"]} value={i["항목값"]}>{(i["항목명"])}{(i["항목값"])}</option>
