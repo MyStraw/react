@@ -1,13 +1,17 @@
 import { useEffect, useState, useRef } from "react";
 import FcstTable from './FcstTable';
+import { useParams } from "react-router-dom";
 
-//item만 넘겨주면 돼~ 단기예보것만.
+//Main에서 선택한 dt, area, x, y 의 url 주소를 받아오는 역할 = useParams.
 
 
 const VillageFcst = () => {    
-
+    console.log("useParames", useParams());
     const [items, setItems] = useState();
-    
+    const dt = useParams().dt;
+    const area = useParams().area;
+    const x = useParams().x;
+    const y = useParams().y;
 
 
     
@@ -17,10 +21,10 @@ const VillageFcst = () => {
         url = url + 'serviceKey=9IZgTnv%2FlgPK2c%2BJcMk4qKiZfz98OMWrRS4OExS9S%2BVHYm4Axmh%2BUzFH4I0UdNByGrTIfzoyNTSshiljEkvcDw%3D%3D';
         url = url + '&numOfRows=900'; 
         url = url + '&pageNo=1';
-        url = url + '&base_date=20230525'; 
-        url = url + '&base_time=0500';
-        url = url + '&nx=55';
-        url = url + '&ny=127';
+        url = url + `&base_date=${dt}`; 
+        url = url + '&base_time=0600';
+        url = url + `&nx=${x}`;
+        url = url + `&ny=${y}`;
         url = url + '&dataType=json'; 
         console.log(url);   
 
@@ -36,9 +40,8 @@ const VillageFcst = () => {
     }, []);   
 
 
-
     return (
-        <>
+        <>         
             {items && <FcstTable items={items} gubun='단기예보' />}
         </>
     )

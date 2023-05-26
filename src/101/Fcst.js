@@ -7,27 +7,27 @@ import FcstMain from "./FcstMain";
 const Fcst = () => {
 
 
-    // return (
-    //     <BrowserRouter>
-    //     <main className="container">       
-                      
-    //         <Routes>
-    //                 <Route path='/' element={<FcstMain  /> } />
-    //                 <Route path='/ultra/:dt/:area/:x/:y' element={<UltraFcst />} />                    
-    //                 <Route path='/vilage/:dt/:area/:x/:y' element={<VillageFcst  />} />
-    //         </Routes>            
-    //     </main>        
-    //     </BrowserRouter>
-    // );
-
-
     return (
-    <>        
-    <UltraFcst/>
-    <VillageFcst/>
-    </>
+        <BrowserRouter>
+        <main className="container">       
+                      
+            <Routes>
+                    <Route path='/' element={<FcstMain  /> } />
+                    <Route path='/ultra/:dt/:area/:x/:y' element={<UltraFcst />} />                    
+                    <Route path='/vilage/:dt/:area/:x/:y' element={<VillageFcst  />} />
+            </Routes>            
+        </main>        
+        </BrowserRouter>
+    );
+
+
+//     return (
+//     <>        
+//     <UltraFcst/>
+//     <VillageFcst/>
+//     </>
    
-)
+// )
 
 
 

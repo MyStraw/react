@@ -1,11 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 import FcstTable from './FcstTable';
-
-//item만 넘겨주면 돼~ 단기예보것만.
-
+import { useParams } from "react-router-dom";
 
 const UltraFcst = () => {
-    const [items, setItems] = useState();
+    console.log("useParames", useParams());
+    const [items, setItems] = useState();    
+    const dt = useParams().dt;
+    const area = useParams().area;
+    const x = useParams().x;
+    const y = useParams().y;
    
 
     useEffect(() => {
@@ -13,10 +16,10 @@ const UltraFcst = () => {
         url = url + 'serviceKey=9IZgTnv%2FlgPK2c%2BJcMk4qKiZfz98OMWrRS4OExS9S%2BVHYm4Axmh%2BUzFH4I0UdNByGrTIfzoyNTSshiljEkvcDw%3D%3D';
         url = url + '&numOfRows=60';
         url = url + '&pageNo=1';
-        url = url + '&base_date=20230525';
-        url = url + '&base_time=0600';
-        url = url + '&nx=55';
-        url = url + '&ny=127';
+        url = url + `&base_date=${dt}`;
+        url = url + '&base_time=0630';
+        url = url + `&nx=${x}`;
+        url = url + `&ny=${y}`;
         url = url + '&dataType=json';
         console.log(url);
 
@@ -24,15 +27,13 @@ const UltraFcst = () => {
         
             .then((resp) => resp.json())             
             .then((data) => setItems(data.response.body.items.item)) 
-            .catch((err) => console.log(err));           
-
-           
+            .catch((err) => console.log(err));                      
     }, []);
 
 
 
     return (
-        <>
+        <>      
             {items && <FcstTable items={items} gubun='초단기예보' />}
         </>
     )

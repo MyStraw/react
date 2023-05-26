@@ -48,7 +48,7 @@ const FcstTable = ({items, gubun}) => {
                 <td>                    
                     {(i.category === 'SKY') ? skyobj[i.fcstValue] 
                     : (i.category === 'PTY') ? ptyobj[i.fcstValue]
-                    : i.fcstValue + tempcd["단위"] }              
+                    : i.fcstValue + tempcd["단위"] }            
                 
                 </td>
             </tr>
