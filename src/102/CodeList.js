@@ -1,7 +1,8 @@
 import code from '../101/getcode.json'
 import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
-import { CodeAtom } from './CodeAtom';
+import { CodeAtom, CodeAtom2 } from './CodeAtom';
 
 //const CodeList=(props)=>{ props는 몽땅 전체로 받아오는거. 이거 오브젝트다.
 //   console.log(props); //이렇게 하니까 중괄호(오브젝트) 형태로 출력된다.
@@ -41,9 +42,23 @@ const CodeList = () => {  //오브젝트 형태로 넘어오니 이렇게 중괄
 
   console.log('opTags', opTags)
 
+
+  const selItem2 = (e)=>{
+    
+    setSel2(e.target.value);
+
+  }
+
+  useEffect(()=>{
+console.log(sel2)
+
+  },[sel2])
+
+
+
   return (
     <>
-      <select id='sel2' name='sel2' defaultValue=''>
+      <select id='sel2' name='sel2' defaultValue='' onChange={selItem2}>
         <option value=''>선택</option>
         {opTags}
       </select>

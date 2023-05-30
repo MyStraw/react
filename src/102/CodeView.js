@@ -1,5 +1,6 @@
 import CodeGubun from "./CodeGubun";
 import CodeList from "./CodeList";
+import CodeShow from "./CodeShow";
 import { RecoilRoot } from "recoil";
 
 const ConstView = () => {
@@ -10,6 +11,7 @@ const ConstView = () => {
         <h1>code</h1>
         <CodeGubun />
         <CodeList />
+        <CodeShow/>
         {/* <CodeGubun />
         <CodeGubun />
         <CodeGubun /> */}
