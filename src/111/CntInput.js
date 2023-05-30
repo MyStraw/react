@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import { CntAtoms } from "./CntAtoms";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { CntAtoms, CntAtomsTwice } from "./CntAtoms";
 
 const CntInput = () => {  
 
     const [n, setN] = useRecoilState(CntAtoms);
+    
+
+
 
     const downN = (e) => {
         e.preventDefault(); //form 태그가 있으면 자꾸 리로드 한다. form 없으면 이거 없어도 됨.
