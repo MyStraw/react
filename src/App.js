@@ -1,6 +1,5 @@
 //index.js 인덱스는 자동 호출. App 까지 가는게 기본. 
 //앱에 사용자 정의태그 갖다 붙여(Hello).
-
 import './App.css';
 //import Hello from './01/Hello'; // 헬로 불러오고 아래에 갖다 붙이기. 
 //import MyClock from './02/MyClock';
@@ -16,11 +15,13 @@ import './App.css';
 //import FsctNav from './09-1/FsctNav';
 //import Fcst from './10/Fcst';
 //import Fcstcopy from './10/Fcst copy';
-import Fcst from './101/Fcst';
-import Fcstcopy from './101/Fcst copy'
-import CodeView from './102/CodeView'
+//import Fcst from './101/Fcst';
+//import Fcstcopy from './101/Fcst copy'
+//import CodeView from './102/CodeView'
+import Cnt from './111/Cnt';
 function App() {
   return (
+    
     // <Hello /> //리액트는 반드시 사용자 정의태그 갖다 붙일때 시작과 끝이 있어야한다.    
     // <MyClock/>
     // <Box/>  
@@ -32,7 +33,10 @@ function App() {
   // <RouteMain/>
   //<Fcst/>
   //<Fcstcopy/>
-  <CodeView/>
+  //<CodeView/>
+  
+  <Cnt/>
+ 
  // <h1>App</h1>
   );
 }
