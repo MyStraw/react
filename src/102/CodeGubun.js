@@ -1,10 +1,11 @@
 import code from '../101/getcode.json'
 import CodeList from './CodeList';
 import { useState, useEffect } from 'react'; //스테이트는 변수. 특별히 관리되는 변수.
-
+import { CodeAtom } from './CodeAtom';
+import { useRecoilState } from 'recoil';
 const CodeGubun = () => {
 
-    const [sel, setSel] = useState();
+    const [sel, setSel] = useRecoilState(CodeAtom);
 
     const selItem = (e) => {
         console.log(e.target.value);
@@ -42,15 +43,9 @@ const CodeGubun = () => {
                                 <option value="초단기예보">초단기예보</option>
                             </select>
                         </div>
-                        <div>
-                            {sel === '' ? <h1>값을 선택하세요</h1> : <CodeList sell={sel} />}
-                        </div>
+                       
                     </div>
-                    <footer>
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </footer>
+                  
                 </form>
             </article>
 
