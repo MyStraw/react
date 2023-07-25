@@ -12,11 +12,13 @@ const CodeShow = ()=>{
     let temp = code.filter((i)=>i["예보구분"]=== sel1 && i["항목값"] === sel2)
    
     setItemTag(
-        <ul key={temp[0]['항목값']}
+        <ul key={temp[0]['항목값']}>
         <li>{temp[0]['항목명']}</li>
         <li>{temp[0]['단위']}</li>
         </ul>
     );
+
+    
 
     console.log(sel1, sel2)
 
